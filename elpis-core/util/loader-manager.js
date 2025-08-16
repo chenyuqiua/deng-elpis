@@ -13,12 +13,12 @@ module.exports = {
     console.log('-- [start] load routerSchema done --', app.routerSchema);
     controller(app);
     console.log('-- [start] load controller done --', app.controller);
+    service(app);
+    console.log('-- [start] load service done --', app.service);
     config(app);
     console.log('-- [start] load config done --');
     extend(app);
     console.log('-- [start] load extend done --');
-    service(app);
-    console.log('-- [start] load service done --');
     router(app);
     console.log('-- [start] load router done --');
   },

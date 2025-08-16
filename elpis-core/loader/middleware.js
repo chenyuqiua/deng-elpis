@@ -1,6 +1,4 @@
-const path = require('path');
 const file = require('../util/file');
-const { sep } = path;
 
 /**
  * 中间件加载器
