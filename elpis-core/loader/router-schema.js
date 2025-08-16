@@ -4,7 +4,8 @@ const file = require('../util/file');
  * router-schema 加载器schema
  * @param {Object} app 应用实例
  *
- * 加载app/router-schema/**.js, 这里都是一级的
+ * 一级目录
+ * 加载app/router-schema/**.js
  * 输出
  * app.routerSchema = {
  *  '{api1}': {jsonSchema},
