@@ -10,11 +10,11 @@ module.exports = {
     config(app);
     console.log('-- [start] load config done --');
     middleware(app);
-    console.log('-- [start] load middleware done --');
+    console.log('-- [start] load middleware done --', app.middlewares);
     extend(app);
     console.log('-- [start] load extend done --');
     routerSchema(app);
-    console.log('-- [start] load routerSchema done --');
+    console.log('-- [start] load routerSchema done --', app.routerSchema);
     service(app);
     console.log('-- [start] load service done --');
     router(app);

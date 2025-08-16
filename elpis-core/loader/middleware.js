@@ -1,6 +1,6 @@
 const path = require('path');
-const glob = require('glob');
 const formaNameByPath = require('../util/forma-name-by-path');
+const file = require('../util/file');
 const { sep } = path;
 
 /**
@@ -12,8 +12,7 @@ const { sep } = path;
  */
 module.exports = (app) => {
   // 获取到middleware目录下的所有js文件
-  const middlewarePath = path.resolve(app.businessPath, `.${sep}middleware`);
-  const fileList = glob.sync(`${middlewarePath}${sep}**${sep}**.js`);
+  const fileList = file.getFileList(app, 'middleware');
 
   // 遍历所有文件, 把内容加载到内存app.middleware中
   const middlewares = {};
