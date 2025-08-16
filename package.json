@@ -5,6 +5,9 @@
   "scripts": {
     "lint": "eslint \"**/*.{js,cjs,mjs}\" --no-error-on-unmatched-pattern",
     "lint:fix": "eslint \"**/*.{js,cjs,mjs}\" --fix --no-error-on-unmatched-pattern",
+    "format": "prettier .",
+    "format:check": "prettier . --check",
+    "format:write": "prettier . --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,13 +15,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "koa": "2.7.0"
+    "koa": "2.7.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "eslint": "^9.33.0",
     "ghooks": "^2.0.4",
     "globals": "^16.3.0",
+    "prettier": "^3.6.2",
     "validate-commit-msg": "^2.14.0"
   },
   "config": {

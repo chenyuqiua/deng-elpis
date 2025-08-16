@@ -5,12 +5,14 @@
       "name": "deng-elpis",
       "dependencies": {
         "koa": "2.7.0",
+        "path": "^0.12.7",
       },
       "devDependencies": {
         "@eslint/js": "^9.33.0",
         "eslint": "^9.33.0",
         "ghooks": "^2.0.4",
         "globals": "^16.3.0",
+        "prettier": "^3.6.2",
         "validate-commit-msg": "^2.14.0",
       },
     },
@@ -270,11 +272,17 @@
 
     "parseurl": ["parseurl@1.3.3", "https://registry.npmmirror.com/parseurl/-/parseurl-1.3.3.tgz", {}, "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ=="],
 
+    "path": ["path@0.12.7", "https://registry.npmmirror.com/path/-/path-0.12.7.tgz", { "dependencies": { "process": "^0.11.1", "util": "^0.10.3" } }, "sha512-aXXC6s+1w7otVF9UletFkFcDsJeO7lSZBPUQhtb5O0xJe8LtYhj/GxldoL09bBj9+ZmE2hNoHqQSFMN5fikh4Q=="],
+
     "path-exists": ["path-exists@3.0.0", "https://registry.npmmirror.com/path-exists/-/path-exists-3.0.0.tgz", {}, "sha512-bpC7GYwiDYQ4wYLe+FA8lhRjhQCMcQGuSgGGqDkg/QerRWw9CmGRT0iSOVRSZJ29NMLZgIzqaljJ63oaL4NIJQ=="],
 
     "path-key": ["path-key@3.1.1", "https://registry.npmmirror.com/path-key/-/path-key-3.1.1.tgz", {}, "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="],
 
     "prelude-ls": ["prelude-ls@1.2.1", "https://registry.npmmirror.com/prelude-ls/-/prelude-ls-1.2.1.tgz", {}, "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="],
+
+    "prettier": ["prettier@3.6.2", "https://registry.npmmirror.com/prettier/-/prettier-3.6.2.tgz", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ=="],
+
+    "process": ["process@0.11.10", "https://registry.npmmirror.com/process/-/process-0.11.10.tgz", {}, "sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A=="],
 
     "punycode": ["punycode@2.3.1", "https://registry.npmmirror.com/punycode/-/punycode-2.3.1.tgz", {}, "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="],
 
@@ -308,6 +316,8 @@
 
     "uri-js": ["uri-js@4.4.1", "https://registry.npmmirror.com/uri-js/-/uri-js-4.4.1.tgz", { "dependencies": { "punycode": "^2.1.0" } }, "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="],
 
+    "util": ["util@0.10.4", "https://registry.npmmirror.com/util/-/util-0.10.4.tgz", { "dependencies": { "inherits": "2.0.3" } }, "sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A=="],
+
     "validate-commit-msg": ["validate-commit-msg@2.14.0", "https://registry.npmmirror.com/validate-commit-msg/-/validate-commit-msg-2.14.0.tgz", { "dependencies": { "conventional-commit-types": "^2.0.0", "find-parent-dir": "^0.3.0", "findup": "0.1.5", "semver-regex": "1.0.0" }, "bin": { "validate-commit-msg": "./lib/cli.js" } }, "sha512-sETG7UmikRVseMyeayyF6L1svmNXoZiyG4TVyLYSVSYjcSuZT602T+irJKjIyE+FutGyngSLxHGLTeyFy+oyag=="],
 
     "vary": ["vary@1.1.2", "https://registry.npmmirror.com/vary/-/vary-1.1.2.tgz", {}, "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="],
@@ -337,6 +347,8 @@
     "opt-cli/lodash.clone": ["lodash.clone@4.3.2", "https://registry.npmmirror.com/lodash.clone/-/lodash.clone-4.3.2.tgz", { "dependencies": { "lodash._baseclone": "~4.5.0" } }, "sha512-Yc/0UmZvWkFsbx7NB4feSX5bSX03SR0ft8CTkI8RCb3w/TzT71HXew2iNDm0aml93P49tIR/NJHOIoE+XEKz9A=="],
 
     "opt-cli/spawn-command": ["spawn-command@0.0.2-1", "https://registry.npmmirror.com/spawn-command/-/spawn-command-0.0.2-1.tgz", {}, "sha512-n98l9E2RMSJ9ON1AKisHzz7V42VDiBQGY6PB1BwRglz99wpVsSuGzQ+jOi6lFXBGVTCrRpltvjm+/XA+tpeJrg=="],
+
+    "util/inherits": ["inherits@2.0.3", "https://registry.npmmirror.com/inherits/-/inherits-2.0.3.tgz", {}, "sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw=="],
 
     "koa/debug/ms": ["ms@2.0.0", "https://registry.npmmirror.com/ms/-/ms-2.0.0.tgz", {}, "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A=="],
   }
