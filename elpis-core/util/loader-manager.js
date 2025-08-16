@@ -2,7 +2,7 @@ const loaders = require('../loader');
 
 module.exports = {
   /**
-   * 初始化加载器
+   * 初始化加载器, 加载所有的loader, 并挂载到app上
    * @param {Object} app 应用实例
    */
   init: (app) => {
@@ -18,9 +18,9 @@ module.exports = {
     config(app);
     console.log('-- [start] load config done --', app.config);
     extend(app);
-    console.log('-- [start] load extend done --');
+    console.log('-- [start] load extend done --', app);
     router(app);
-    console.log('-- [start] load router done --');
+    console.log('-- [start] load router done --', app);
   },
   loaders,
 };
