@@ -6,7 +6,7 @@ const loaderManager = require('./util/loader-manager');
 
 /**
  * @description 启动方法
- * @param {*} options 应用配置项
+ * @param {Object} options 应用配置项
  */
 const start = (options = {}) => {
   const app = new Koa();

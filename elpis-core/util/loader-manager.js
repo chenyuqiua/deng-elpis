@@ -1,6 +1,10 @@
 const loaders = require('../loader');
 
 module.exports = {
+  /**
+   * 初始化加载器
+   * @param {Object} app 应用实例
+   */
   init: (app) => {
     const { config, extend, middleware, router, routerSchema, service } = loaders;
     config(app);
