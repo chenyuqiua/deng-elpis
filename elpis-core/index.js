@@ -2,6 +2,7 @@ const Koa = require('koa');
 const path = require('path');
 const env = require('./env');
 const { sep } = path; // 兼容不同操作系统的路径分隔符
+const loaderManager = require('./util/loader-manager');
 
 /**
  * @description 启动方法
@@ -17,6 +18,10 @@ const start = (options = {}) => {
   app.businessPath = path.resolve(app.baseDir, `.${sep}app`);
 
   app.env = env();
+  console.log(`-- [start] env: ${app.env.get()} --`);
+
+  // 初始化加载器
+  loaderManager.init(app);
 
   try {
     const port = process.env.PORT || 8080;
