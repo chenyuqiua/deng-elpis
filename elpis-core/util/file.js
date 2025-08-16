@@ -4,12 +4,12 @@ const { sep } = path;
 
 /**
  * 获取文件夹下的所有文件路径列表
- * @param {string} businessPath 业务所在路径
+ * @param {string} filePath 文件路径
  * @param {string} folderName 文件夹名称, 例如 'middleware', 'controller'
  * @returns {string[]} 文件路径列表
  */
-const getFilePathList = (businessPath, folderName) => {
-  const folderPath = path.resolve(businessPath, `.${sep}${folderName}`);
+const getFilePathList = (filePath, folderName) => {
+  const folderPath = path.resolve(filePath, `.${sep}${folderName}`);
   return glob.sync(`${folderPath}${sep}**${sep}**.js`);
 };
 
@@ -30,7 +30,7 @@ const formatPathToName = (filePath, folderName) => {
 /**
  * 将文件路径列表转换为一个对象
  * @param {Object} params 参数
- * @param {string} params.businessPath 业务所在路径
+ * @param {string} params.filePath 文件路径
  * @param {string} params.folderName 文件夹名称, 例如 'middleware', 'controller'
  * @param {Function} params.handlerModule 处理模块的函数, 如何处理由外部控制, 例如 (module) => module(app)
  * @returns {Object} 转换后的对象
@@ -48,9 +48,9 @@ const formatPathToName = (filePath, folderName) => {
  * }
  */
 const getFileModuleTree = (params) => {
-  const { businessPath, folderName, handlerModule } = params;
+  const { filePath, folderName, handlerModule } = params;
   // 获取到文件夹下的所有文件路径列表
-  const filePathList = getFilePathList(businessPath, folderName);
+  const filePathList = getFilePathList(filePath, folderName);
 
   // 遍历所有文件, 转换为对象
   const ansObj = {};

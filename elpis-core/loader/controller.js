@@ -10,7 +10,7 @@ const file = require('../util/file');
 module.exports = (app) => {
   // 获取到controller目录下的所有js文件, 并转换为对象挂载到app.controllers中
   const controller = file.getFileModuleTree({
-    businessPath: app.businessPath,
+    filePath: app.businessPath,
     folderName: 'controller',
     handlerModule: (module) => {
       const Controller = module(app);

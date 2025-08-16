@@ -16,7 +16,7 @@ module.exports = {
     service(app);
     console.log('-- [start] load service done --', app.service);
     config(app);
-    console.log('-- [start] load config done --');
+    console.log('-- [start] load config done --', app.config);
     extend(app);
     console.log('-- [start] load extend done --');
     router(app);

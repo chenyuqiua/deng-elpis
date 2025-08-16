@@ -10,7 +10,7 @@ const file = require('../util/file');
 module.exports = (app) => {
   // 获取到middleware目录下的所有js文件, 并转换为对象挂载到app.middlewares中
   const middlewares = file.getFileModuleTree({
-    businessPath: app.businessPath,
+    filePath: app.businessPath,
     folderName: 'middleware',
     handlerModule: (module) => module(app),
   });
