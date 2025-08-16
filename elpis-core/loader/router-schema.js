@@ -1,8 +1,4 @@
-const path = require('path');
-const glob = require('glob');
-const formaNameByPath = require('../util/forma-name-by-path');
 const file = require('../util/file');
-const { sep } = path;
 
 /**
  * router-schema 加载器schema
@@ -17,7 +13,7 @@ const { sep } = path;
  * }
  */
 module.exports = (app) => {
-  const fileList = file.getFileList(app, 'router-schema');
+  const fileList = file.getFilePathList(app.businessPath, 'router-schema');
 
   let routerSchema = {};
   fileList.forEach((file) => {

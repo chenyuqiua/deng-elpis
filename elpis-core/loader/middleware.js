@@ -1,5 +1,4 @@
 const path = require('path');
-const formaNameByPath = require('../util/forma-name-by-path');
 const file = require('../util/file');
 const { sep } = path;
 
@@ -11,25 +10,11 @@ const { sep } = path;
  * 例如 'custom-folder/aa-bb.js' 转换为 'customFolder.aaBb'
  */
 module.exports = (app) => {
-  // 获取到middleware目录下的所有js文件
-  const fileList = file.getFileList(app, 'middleware');
-
-  // 遍历所有文件, 把内容加载到内存app.middleware中
-  const middlewares = {};
-  let temp = middlewares;
-  fileList.forEach((file) => {
-    const name = formaNameByPath(file);
-    const names = name.split(sep);
-    names.forEach((n, index) => {
-      if (index === 0 && index !== names.length - 1) return;
-
-      if (index === names.length - 1) {
-        temp[n] = require(file)(app);
-      } else {
-        temp[n] = temp[n] || {};
-        temp = temp[n];
-      }
-    });
+  // 获取到middleware目录下的所有js文件, 并转换为对象挂载到app.middlewares中
+  const middlewares = file.getFileModuleTree({
+    businessPath: app.businessPath,
+    folderName: 'middleware',
+    handlerModule: (module) => module(app),
   });
   app.middlewares = middlewares;
 };

@@ -6,15 +6,17 @@ module.exports = {
    * @param {Object} app 应用实例
    */
   init: (app) => {
-    const { config, extend, middleware, router, routerSchema, service } = loaders;
-    config(app);
-    console.log('-- [start] load config done --');
+    const { config, extend, middleware, router, routerSchema, service, controller } = loaders;
     middleware(app);
     console.log('-- [start] load middleware done --', app.middlewares);
-    extend(app);
-    console.log('-- [start] load extend done --');
     routerSchema(app);
     console.log('-- [start] load routerSchema done --', app.routerSchema);
+    controller(app);
+    console.log('-- [start] load controller done --', app.controller);
+    config(app);
+    console.log('-- [start] load config done --');
+    extend(app);
+    console.log('-- [start] load extend done --');
     service(app);
     console.log('-- [start] load service done --');
     router(app);
