@@ -24,4 +24,6 @@ module.exports = (app) => {
       enableTypes: ['json', 'form', 'text'],
     })
   );
+
+  app.use(app.middlewares.errorHandler);
 };

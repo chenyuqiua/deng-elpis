@@ -21,7 +21,7 @@ module.exports = (app) => {
   try {
     defaultConfig = require(path.resolve(configPath, 'default.config.js'));
   } catch (error) {
-    console.error(`[exception] can not load default.config.js: ${error}`);
+    console.error(`[--exception--] can not load default.config.js: ${error}`);
   }
 
   // 加载环境配置
@@ -35,7 +35,7 @@ module.exports = (app) => {
     const envConfigPath = envConfigMap[app.env.get()];
     if (envConfigPath) envConfig = require(envConfigPath);
   } catch (error) {
-    console.error(`[exception] can not load ${app.env.get()}.config.js: ${error}`);
+    console.error(`[-- exception --] can not load ${app.env.get()}.config.js: ${error}`);
   }
 
   app.config = Object.assign({}, defaultConfig, envConfig);

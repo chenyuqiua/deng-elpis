@@ -18,7 +18,7 @@ const start = (options = {}) => {
   app.businessPath = path.resolve(app.baseDir, `.${sep}app`);
 
   app.env = env();
-  console.log(`-- [start] env: ${app.env.get()} --`);
+  console.log(`[-- start --] env: ${app.env.get()}`);
 
   // 初始化加载器
   loaderManager.init(app);

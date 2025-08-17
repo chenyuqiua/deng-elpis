@@ -1,5 +1,5 @@
 const elpisCore = require('./elpis-core');
 
-elpisCore.start();
-
-
+elpisCore.start({
+  redirectPath: '/',
+});

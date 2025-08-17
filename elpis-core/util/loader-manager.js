@@ -9,33 +9,33 @@ module.exports = {
   init: (app) => {
     const { config, extend, middleware, router, routerSchema, service, controller } = loaders;
     middleware(app);
-    console.log('-- [start] load middleware done --', app.middlewares);
+    console.log('[-- start --] load middleware done', app.middlewares);
 
     routerSchema(app);
-    console.log('-- [start] load routerSchema done --', app.routerSchema);
+    console.log('[-- start --] load routerSchema done', app.routerSchema);
 
     controller(app);
-    console.log('-- [start] load controller done --', app.controller);
+    console.log('[-- start --] load controller done', app.controller);
 
     service(app);
-    console.log('-- [start] load service done --', app.service);
+    console.log('[-- start --] load service done', app.service);
 
     config(app);
-    console.log('-- [start] load config done --', app.config);
+    console.log('[-- start --] load config done', app.config);
 
     extend(app);
-    console.log('-- [start] load extend done --', app);
+    console.log('[-- start --] load extend done', app);
 
     // 注册全局中间件
     try {
       require(`${app.businessPath}${sep}middleware.js`)(app);
-      console.log('-- [start] load global middleware done --');
+      console.log('[-- start --] load global middleware done');
     } catch (error) {
-      console.error(`[exception] there is no middleware file: ${error}`);
+      console.error(`[-- exception --] there is no middleware file: ${error}`);
     }
 
     router(app);
-    console.log('-- [start] load router done --', app);
+    console.log('[-- start --] load router done', app);
   },
   loaders,
 };
