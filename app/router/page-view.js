@@ -1,5 +1,5 @@
 module.exports = (app, router) => {
-  const { pageView: viewController } = app.controller;
+  const { pageViewController } = app.controller;
 
-  router.get('/view/:page', viewController.renderPage.bind(viewController));
+  router.get('/view/:page', pageViewController.renderPage.bind(pageViewController));
 };

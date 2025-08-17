@@ -8,5 +8,13 @@
   </head>
   <body style="color: red">
     <h1>prot: {{ port }}</h1>
+    <button id="btn" onclick="handleGetList()">get list</button>
+    <script>
+      const handleGetList = async () => {
+        const res = await fetch('/api/project/list');
+        const data = await res.json();
+        console.log(data);
+      };
+    </script>
   </body>
 </html>
