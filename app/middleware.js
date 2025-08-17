@@ -1,5 +1,6 @@
 const koaNunjucks = require('koa-nunjucks-2');
 const koaStatic = require('koa-static');
+const koaBodyParser = require('koa-bodyparser');
 const path = require('path');
 
 module.exports = (app) => {
@@ -14,6 +15,13 @@ module.exports = (app) => {
         noCache: true,
         trimBlocks: true,
       },
+    })
+  );
+  // 引入解析 ctx.body 的中间件
+  app.use(
+    koaBodyParser({
+      formLimit: '1000mb',
+      enableTypes: ['json', 'form', 'text'],
     })
   );
 };
