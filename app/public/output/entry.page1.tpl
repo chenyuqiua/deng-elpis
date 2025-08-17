@@ -11,7 +11,7 @@
     <button id="btn" onclick="handleGetList()">get list</button>
     <script>
       const handleGetList = async () => {
-        const res = await fetch('/api/project/list');
+        const res = await fetch('/api/project/list?project_id=123');
         const data = await res.json();
         console.log(data);
       };

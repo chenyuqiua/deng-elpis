@@ -26,5 +26,6 @@ module.exports = (app) => {
   );
 
   app.use(app.middlewares.errorHandler);
-  app.use(app.middlewares.apiSignVerify);
+  // app.use(app.middlewares.apiSignVerify);
+  app.use(app.middlewares.apiParamsVerify);
 };
