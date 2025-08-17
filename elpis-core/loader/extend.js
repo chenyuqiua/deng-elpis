@@ -1,4 +1,5 @@
 const file = require('../util/file');
+const { sep } = require('path');
 
 /**
  * extend 加载器
@@ -12,7 +13,7 @@ module.exports = (app) => {
   const fileList = file.getFilePathList(app.businessPath, 'extend');
 
   fileList.forEach((filePath) => {
-    const name = file.formatPathToName(filePath, 'extend');
+    const name = file.formatPathToName(filePath, 'extend').split(sep)[1];
 
     // 检查key是否已经存在
     for (const key in app) {
